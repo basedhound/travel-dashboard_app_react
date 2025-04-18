@@ -54,6 +54,8 @@ const Dashboard = () => {
       <Header
         title={`Welcome ${user?.name ?? "Guest"} 👋`}
         description="Track activity, trends, and popular destinations in real time"
+        ctaText="Create a trip"
+        ctaUrl="/trips/create"
       />
       <section className="flex flex-col gap-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
