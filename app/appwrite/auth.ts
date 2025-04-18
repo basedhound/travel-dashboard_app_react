@@ -16,6 +16,42 @@ export const getExistingUser = async (id: string) => {
   }
 };
 
+export const getAllUsers = async (limit: number, offset: number) => {
+  try {
+    const { documents: users, total } = await database.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.userCollectionId,
+      [Query.limit(limit), Query.offset(offset)]
+    );
+
+    if (total === 0) return { users: [], total }; // Return total for pagination
+
+    const usersWithItineraryCount = await Promise.all(
+      users.map(async (user) => {
+        const { total: itineraryCount } = await database.listDocuments(
+          appwriteConfig.databaseId,
+          appwriteConfig.itineraryCollectionId,
+          [Query.equal("userId", user.accountId)]
+        );
+        return {
+          accountId: user.accountId,
+          name: user.name,
+          email: user.email,
+          imageUrl: user.imageUrl,
+          joinedAt: user.joinedAt,
+          status: user.status,
+          itineraryCount,
+        };
+      })
+    );
+
+    return { users: usersWithItineraryCount, total };
+  } catch (error) {
+    console.error("Error fetching users with itinerary count:", error);
+    return { users: [], total: 0 };
+  }
+};
+
 export const storeUserData = async () => {
   try {
     const user = await account.get();

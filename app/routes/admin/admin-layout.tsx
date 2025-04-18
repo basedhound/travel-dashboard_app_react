@@ -22,7 +22,6 @@ export async function clientLoader() {
   }
 }
 
-
 const AdminLayout = () => (
   <div className="admin-layout">
     <MobileSidebar/>
