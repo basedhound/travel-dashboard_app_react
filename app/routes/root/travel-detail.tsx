@@ -1,5 +1,6 @@
 import { Link, type LoaderFunctionArgs } from "react-router";
 import {
+  ButtonComponent,
   ChipDirective,
   ChipListComponent,
   ChipsDirective,
@@ -207,6 +208,17 @@ const TravelDetail = ({ loaderData }: Route.ComponentProps) => {
               </div>
             </section>
           ))}
+
+          <a href={paymentLink} className="flex">
+            <ButtonComponent
+              type="submit"
+              className="button-class !h-12 !w-full">
+              <span className="p-16-semibold text-white">
+                Pay and join trip
+              </span>
+              <span className="price-pill">{estimatedPrice}</span>
+            </ButtonComponent>
+          </a>
         </section>
       </div>
 

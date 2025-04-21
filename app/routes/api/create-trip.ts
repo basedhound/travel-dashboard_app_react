@@ -3,7 +3,7 @@ import { database, appwriteConfig } from "~/appwrite/client";
 import { ID } from "appwrite";
 import { parseMarkdownToJson } from "~/lib/utils";
 import { data, type ActionFunctionArgs } from "react-router";
-// import { createProduct } from "~/lib/stripe";
+import { createProduct } from "~/lib/stripe";
 import { parseTripData } from "~/lib/utils";
 
 export async function action({ request }: ActionFunctionArgs) {
@@ -93,7 +93,25 @@ export async function action({ request }: ActionFunctionArgs) {
         userId,
       }
     );
-    
+
+    const tripDetail = parseTripData(result.tripDetail) as Trip;
+    const tripPrice = parseInt(tripDetail.estimatedPrice.replace("$", ""), 10);
+    const paymentLink = await createProduct(
+      tripDetail.name,
+      tripDetail.description,
+      imageUrls,
+      tripPrice,
+      result.$id
+    );
+    await database.updateDocument(
+      appwriteConfig.databaseId,
+      appwriteConfig.itineraryCollectionId,
+      result.$id,
+      {
+        payment_link: paymentLink.url,
+      }
+    );
+
     return data({ id: result.$id });
   } catch (error) {
     console.error("Error generating travel plan:", error);
