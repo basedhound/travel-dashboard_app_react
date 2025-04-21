@@ -1,7 +1,7 @@
 import { Outlet, redirect } from "react-router";
 import { getExistingUser, storeUserData } from "~/appwrite/auth";
 import { account } from "~/appwrite/client";
-// import RootNavbar from "~/components/RootNavbar";
+import RootNavbar from "~/components/RootNavbar";
 
 export async function clientLoader() {
   try {
@@ -19,7 +19,7 @@ export async function clientLoader() {
 const PageLayout = () => {
   return (
     <div className="bg-light-200">
-      RootNavbar
+      <RootNavbar/>
       <Outlet />
     </div>
   );
