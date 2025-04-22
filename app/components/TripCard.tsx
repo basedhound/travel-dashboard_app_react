@@ -17,9 +17,12 @@ const TripCard = ({
   const path = useLocation();
   return (
     <Link
-      to={path.pathname === "/" ? `/travel/${id}` : `/trips/${id}`}
-      className="trip-card"
-    >
+      to={
+        path.pathname === "/" || path.pathname.startsWith("/travel")
+          ? `/travel/${id}`
+          : `/trips/${id}`
+      }
+      className="trip-card">
       <img src={imageUrl} alt={name} />
       <article>
         <h2>{name}</h2>
@@ -55,4 +58,3 @@ const TripCard = ({
 };
 
 export default TripCard;
-
