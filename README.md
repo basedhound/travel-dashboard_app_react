@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-    <a href="traveldashboard-fv.vercel.app" target="_blank">
+    <a href="https://traveldashboard-fv.vercel.app" target="_blank">
       <img src="public/assets/images/readme.png" alt="Project Banner">
     </a>
   <br />
