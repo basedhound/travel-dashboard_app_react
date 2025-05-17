@@ -1,6 +1,7 @@
 <div align="center">
+<h3 align="center">🚧NOT WORKING RIGHT NOW, NEED FIX 🚧</h3>
   <br />
-    <a href="" target="_blank">
+    <a href="https://tourvisto-fv.vercel.app" target="_blank">
       <img src="public/assets/readme/readme.png" alt="Project Banner">
     </a>
   <br />
@@ -12,7 +13,6 @@
   </div>
 
   <h3 align="center">Full Stack Real-time Teaching Platform with AI</h3>
-    <h3 align="center">🚧NOT WORKING RIGHT NOW, NEED FIX 🚧</h3>
 
    <div align="center">
      Build this project step by step with our detailed tutorial on <a href="" target="_blank"><b>JavaScript Mastery</b></a> YouTube. Join the JSM family!
