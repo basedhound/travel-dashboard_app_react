@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-    <a href="https://tourvisto-fv.vercel.app" target="_blank">
+    <a href="traveldashboard-fv.vercel.app" target="_blank">
       <img src="public/assets/images/readme.png" alt="Project Banner">
     </a>
   <br />
@@ -88,7 +88,7 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone {git remote URL}
+git clone {git repository link}
 ```
 
 **Installation**
@@ -115,7 +115,7 @@ VITE_APPWRITE_ITINERARY_COLLECTION_ID=
 
 STRIPE_SECRET_KEY=
 GEMINI_API_KEY=
-UNSPLASH_ACCESS_KEY=
+UNSPLASH_ACCESS_KEY="
 VITE_BASE_URL="http://localhost:5173"
 ```
 Replace the placeholder values with your actual **[Syncfusion](https://jsm.dev/tourvisto-syncfusion)**, **[Appwrite](https://jsm.dev/tourvisto-appwrite)**, **[Gemini AI](https://aistudio.google.com/)**, **[Sentry](https://jsm.dev/tourvisto-sentry)**, **[Stripe](https://stripe.com/)**, and **[Unsplash](https://unsplash.com/)** credentials.
