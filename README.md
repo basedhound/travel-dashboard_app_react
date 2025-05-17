@@ -88,7 +88,7 @@ Make sure you have the following installed on your machine:
 **Cloning the Repository**
 
 ```bash
-git clone {git repository link}
+git clone {git remote URL}
 ```
 
 **Installation**
